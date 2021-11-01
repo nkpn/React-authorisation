@@ -25,8 +25,6 @@ const SignUp = ({ submitForm }) => {
     validate,
   );
 
-  const isSelected = values.email;
-
   return (
     <>
       <h1 className="Heading">Sign Up with email</h1>

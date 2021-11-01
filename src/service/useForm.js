@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import notify from './Toast';
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -44,6 +45,11 @@ const useForm = (callback, validate) => {
 
     setErrors(validate(values));
     setIsSubmitting(true);
+
+    //! тут
+    if (!errors) {
+      notify();
+    }
   };
 
   useEffect(() => {
