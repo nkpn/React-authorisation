@@ -1,0 +1,176 @@
+@import 'styles/variables';
+
+.Heading {
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0;
+  color: $text-color;
+}
+
+.Label {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-top: 30px;
+  color: $text-color;
+}
+
+.Label ~ p {
+  color: red;
+  margin-top: 12px;
+}
+
+.Form {
+  width: 100%;
+}
+
+.Input {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 24px;
+  font-size: 18px;
+  color: $text-color;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  border-radius: 16px;
+
+  background-image: url('./eye.svg');
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: 450px;
+  @media screen and (max-width: 768px) {
+    background-position: 260px;
+  }
+
+  &:focus {
+    border: 1px solid $border-focus-color;
+  }
+}
+
+.ListRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ListItem {
+  display: block;
+  position: relative;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 20px 44px;
+  width: 156px;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 15px;
+    width: 90px;
+  }
+}
+
+.GenderLabel {
+  display: inline-block;
+  font-size: 18px;
+  color: #5b5b5b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ListIcon {
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.CustomCheckbox {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  width: 155px;
+  height: 110px;
+
+  @media screen and (max-width: 768px) {
+    width: 90px;
+    height: 80px;
+  }
+}
+
+.ListItem + .CustomCheckbox:checked {
+  background-color: #3c9c41;
+}
+
+.ListItemChecked {
+  border: 1px solid #3c9c41;
+  color: #3c9c41;
+  fill: #3c9c41;
+  background-color: #3c9c41;
+}
+
+input[type='radio']:checked + .ListLabel {
+  color: #3c9c41;
+  fill: #3c9c41;
+  background-color: #3c9c41;
+}
+
+.SignUpBtn {
+  margin-top: 30px;
+  background-color: $btn-color;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 18px;
+  width: 100%;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border: 1px solid $btn-color;
+  cursor: pointer;
+  color: $primary-text-color;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &:hover {
+    background-color: $btn-hover-color;
+    border: 1px solid $btn-hover-color;
+  }
+
+  &:focus {
+    background-color: $btn-pressed-color;
+    border: 1px solid $btn-pressed-color;
+  }
+}
+.SpanContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.Span {
+  display: block;
+  margin-top: 30px;
+  color: $span-text-color;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 16px;
+  }
+}
+
+.Link {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: $btn-color;
+  text-decoration: underline;
+}

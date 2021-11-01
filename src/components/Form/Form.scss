@@ -1,0 +1,35 @@
+@import 'styles/variables';
+
+.FormContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $form-bg-color;
+  box-shadow: $box-shadow-color;
+  border-radius: 16px;
+
+  @media screen and (min-width: 768px) {
+    padding: 35px;
+    max-width: 570px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 16px;
+    max-width: 340px;
+  }
+}
+
+.Logo {
+  @media screen and (min-width: 768px) {
+    height: 82px;
+    width: 80px;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 56px;
+    width: 55px;
+    margin-bottom: 21px;
+  }
+}
