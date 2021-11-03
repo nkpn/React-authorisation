@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React-authorisation/static/css/main.2a81b8e8.chunk.css",
-    "main.js": "/React-authorisation/static/js/main.044e4aff.chunk.js",
-    "main.js.map": "/React-authorisation/static/js/main.044e4aff.chunk.js.map",
+    "main.js": "/React-authorisation/static/js/main.e7d28e5c.chunk.js",
+    "main.js.map": "/React-authorisation/static/js/main.e7d28e5c.chunk.js.map",
     "runtime-main.js": "/React-authorisation/static/js/runtime-main.4fd32595.js",
     "runtime-main.js.map": "/React-authorisation/static/js/runtime-main.4fd32595.js.map",
     "static/css/2.bc922b9c.chunk.css": "/React-authorisation/static/css/2.bc922b9c.chunk.css",
@@ -23,6 +23,6 @@
     "static/css/2.bc922b9c.chunk.css",
     "static/js/2.1d5bf282.chunk.js",
     "static/css/main.2a81b8e8.chunk.css",
-    "static/js/main.044e4aff.chunk.js"
+    "static/js/main.e7d28e5c.chunk.js"
   ]
 }
