@@ -25,11 +25,18 @@ const useForm = (callback, validate) => {
 
     setErrors(validate(values));
     setIsSubmitting(true);
+
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      console.log('Well done!');
+    }
   };
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       callback();
+      alert(
+        `Your gender is ${values.gender}, your email is ${values.email}, and your passowrd is ${values.password1}`,
+      );
     }
   }, [errors, callback, isSubmitting]);
 
