@@ -1,25 +1,12 @@
 import React from 'react';
 import useForm from 'service/useForm';
 import validate from 'service/validation';
-import shortid from 'shortid';
+import maleImage from './images/male.svg';
+import femaleImage from './images/female.svg';
+import otherImage from './images/other.svg';
 import './SignUp.scss';
 
 const SignUp = ({ submitForm }) => {
-  const options = [
-    {
-      value: 'male',
-      label: 'Male',
-    },
-    {
-      value: 'female',
-      label: 'Female',
-    },
-    {
-      value: 'other',
-      label: 'Other',
-    },
-  ];
-
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate,
@@ -30,30 +17,71 @@ const SignUp = ({ submitForm }) => {
       <h1 className="Heading">Sign Up with email</h1>
       <form className="Form" noValidate onSubmit={handleSubmit}>
         <label className="Label">Gender</label>
-        <ul className="ListRow">
-          {options.map(({ value, label }) => {
-            return (
-              <li key={shortid()} className="ListItem">
-                <label className="GenderLabel">
-                  <img
-                    src={require('../../images/' + value + '.svg').default}
-                    className="ListIcon"
-                    alt={label}
-                  ></img>
-                  <input
-                    type="radio"
-                    name="gender"
-                    value={values.gender} //* Тут было {value}
-                    onChange={handleChange}
-                    checked={values.gender}
-                    className="CustomCheckbox"
-                  ></input>
-                  {label}
-                </label>
-              </li>
-            );
-          })}
-        </ul>
+
+        <div className="ListRow">
+          <label
+            className="GenderLabel"
+            style={{
+              borderColor: !values.gender
+                ? 'grey'
+                : values.gender === 'male'
+                ? 'green'
+                : 'grey',
+            }}
+          >
+            <img src={maleImage} alt="Male" className="ImageGender"></img>
+            Male
+            <input
+              className="GenderInput"
+              type="radio"
+              name="gender"
+              value="male"
+              onChange={handleChange}
+            ></input>
+          </label>
+          <label
+            className="GenderLabel"
+            style={{
+              borderColor: !values.gender
+                ? 'grey'
+                : values.gender === 'female'
+                ? 'green'
+                : 'grey',
+            }}
+          >
+            <img src={femaleImage} alt="female" className="ImageGender"></img>
+            Female
+            <input
+              className="GenderInput"
+              type="radio"
+              name="gender"
+              value="female"
+              onChange={handleChange}
+            ></input>
+          </label>
+
+          <label
+            className="GenderLabel"
+            style={{
+              borderColor: !values.gender
+                ? 'grey'
+                : values.gender === 'other'
+                ? 'green'
+                : 'grey',
+            }}
+          >
+            <img src={otherImage} alt="Other" className="ImageGender"></img>
+            Other
+            <input
+              className="GenderInput"
+              type="radio"
+              name="gender"
+              value="other"
+              onChange={handleChange}
+            ></input>
+          </label>
+        </div>
+        {errors.gender && <p>{errors.gender}</p>}
 
         <label className="Label">E-mail</label>
         <input

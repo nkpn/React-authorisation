@@ -50,7 +50,12 @@
   }
 }
 
+input[name='email'] {
+  background-image: none;
+}
+
 .ListRow {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -80,41 +85,33 @@
   align-items: center;
 }
 
-.ListIcon {
+.GenderInput {
+  opacity: 0;
+}
+
+.GenderLabel {
+  content: '';
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 18px 55px 8px 55px;
+  width: 156px;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 15px;
+    width: 90px;
+  }
+}
+
+.ImageGender {
   height: 32px;
   width: 32px;
   align-items: center;
   margin-bottom: 8px;
-}
-
-.CustomCheckbox {
-  cursor: pointer;
-  position: absolute;
-  opacity: 0;
-  width: 155px;
-  height: 110px;
-
-  @media screen and (max-width: 768px) {
-    width: 90px;
-    height: 80px;
-  }
-}
-
-.ListItem + .CustomCheckbox:checked {
-  background-color: #3c9c41;
-}
-
-.ListItemChecked {
-  border: 1px solid #3c9c41;
-  color: #3c9c41;
-  fill: #3c9c41;
-  background-color: #3c9c41;
-}
-
-input[type='radio']:checked + .ListLabel {
-  color: #3c9c41;
-  fill: #3c9c41;
-  background-color: #3c9c41;
 }
 
 .SignUpBtn {
@@ -146,6 +143,7 @@ input[type='radio']:checked + .ListLabel {
     border: 1px solid $btn-pressed-color;
   }
 }
+
 .SpanContainer {
   display: flex;
   flex-direction: column;

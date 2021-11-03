@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import notify from './Toast';
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -9,27 +8,6 @@ const useForm = (callback, validate) => {
     password2: '',
   });
 
-  //* Variant 2
-  //   const [gender, setGender] = useState('');
-  //   const [email, setEmail] = useState('');
-  //   const [password1, setPassword1] = useState('');
-  //   const [password2, setPassword2] = useState('');
-
-  //   const handleChange = ({ target: { name, value } }) => {
-  //     switch (name) {
-  //       case 'gender':
-  //         return setGender(value);
-  //       case 'email':
-  //         return setEmail(value);
-  //       case 'password1':
-  //         return setPassword1(value);
-  //       case 'password2':
-  //         return setPassword2(value);
-  //       default:
-  //         return;
-  //     }
-  //   };
-
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -38,6 +16,8 @@ const useForm = (callback, validate) => {
       ...values,
       [event.target.name]: event.target.value,
     });
+
+    console.log('values:', values);
   };
 
   const handleSubmit = e => {
@@ -45,11 +25,6 @@ const useForm = (callback, validate) => {
 
     setErrors(validate(values));
     setIsSubmitting(true);
-
-    //! тут
-    if (!errors) {
-      notify();
-    }
   };
 
   useEffect(() => {
